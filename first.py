@@ -1,10 +1,17 @@
-blockchain = [1, 8.6, 5.1]
+blockchain = [[0, 0]]
+
+
+def get_last_block_value(chain):
+    return chain[-1][1]
+
+
+def add_value(chain, value):
+    chain.append([get_last_block_value(blockchain), value])
+    return chain
+
+
+add_value(blockchain, 123.123)
+add_value(blockchain, 333.333)
+add_value(blockchain, 222.222)
 print(blockchain)
-print(blockchain[1])
-blockchain[1] = 123.23
-print(blockchain)
-blockchain.append(99.22)
-print(blockchain)
-last_element = blockchain.pop()
-print('last element:', last_element)
-print(blockchain)
+print(get_last_block_value(blockchain))
